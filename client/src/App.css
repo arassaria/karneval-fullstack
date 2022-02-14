@@ -1,10 +1,64 @@
+@import url("https://fonts.googleapis.com/css2?family=Lobster&display=swap");
+
+h1 {
+  font-family: "Lobster";
+  font-size: 4rem;
+  color: white;
+}
+
+h3 {
+  font-family: "Lobster";
+  color: white;
+}
+
+img {
+  width: 449px;
+}
+
+.ESLogo {
+  margin-top: 175px;
+  margin-bottom: 174px;
+  background: white;
+}
+
 .App {
   text-align: center;
+  width: 100vw;
+  height: 100vh;
+  background-image: url("./assets/background.jpg");
+  background-size: 100vw 100vh;
+  overflow: scroll;
+}
+
+.ContentWrapper {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .App-logo {
   height: 40vmin;
   pointer-events: none;
+}
+
+.Auctionator {
+  display: flex;
+  flex-direction: row;
+  align-items: space-evenly;
+  background-color: white;
+  border: 1px solid black;
+}
+
+.HighestBid {
+  color: black;
+  text-align: center;
+}
+
+.BiddingForm {
+  display: flex;
+  flex-direction: column;
 }
 
 @media (prefers-reduced-motion: no-preference) {
@@ -16,12 +70,9 @@
 .App-header {
   background-color: #282c34;
   min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
+  overflow: scroll;
 }
 
 .App-link {
@@ -34,5 +85,57 @@
   }
   to {
     transform: rotate(360deg);
+  }
+}
+
+.Stream {
+  display: flex;
+  flex-direction: row;
+  padding-top: 25px;
+}
+
+.LinkContainer {
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  margin-bottom: 10px;
+}
+
+@media only screen and (max-width: 1300px) {
+  .Stream {
+    flex-direction: column;
+  }
+
+  .YouTube {
+    width: 704px;
+    height: 480px;
+    padding-bottom: 10px;
+  }
+
+  .Livechat {
+    margin: 0 auto;
+  }
+}
+
+@media only screen and (max-width: 720px) {
+  .App {
+    width: 100vw;
+    overflow-x: none;
+  }
+
+  .YouTube {
+    width: 352px;
+    height: 240px;
+    padding-bottom: 10px;
+  }
+
+  .Livechat {
+    margin: 0 auto;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .App {
+    background-image: url("./assets/karneval-verbindet_mobil.png");
   }
 }
