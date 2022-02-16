@@ -8,6 +8,7 @@ const Auction = () => {
     city: "",
     mail: "",
     phone: "",
+    idcard: "",
     verification: 0,
   });
 
@@ -50,6 +51,7 @@ const Auction = () => {
               phone: "",
               money: "",
               idcard: "",
+              verification: 0,
             });
           }}
         >
