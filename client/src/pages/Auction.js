@@ -8,6 +8,7 @@ const Auction = () => {
     city: "",
     mail: "",
     phone: "",
+    verification: 0,
   });
 
   const [highestBid, setHighestBid] = useState([]);
@@ -48,6 +49,7 @@ const Auction = () => {
               mail: "",
               phone: "",
               money: "",
+              idcard: "",
             });
           }}
         >
@@ -84,6 +86,13 @@ const Auction = () => {
             value={bid.phone}
             onChange={(event) => setBid({ ...bid, phone: event.target.value })}
             placeholder="Telefon"
+            required
+          />
+          <input
+            type="text"
+            value={bid.idcard}
+            onChange={(event) => setBid({ ...bid, idcard: event.target.value })}
+            placeholder="Personalausweisnummer"
             required
           />
           <input

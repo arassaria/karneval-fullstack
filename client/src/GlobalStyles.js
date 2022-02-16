@@ -2,7 +2,7 @@ import { createGlobalStyle } from "styled-components/macro";
 
 const GlobalStyle = createGlobalStyle`
     body {
-        background-image: linear-gradient(white, grey);
+        background: linear-gradient(white, #3f789b);
         background-repeat: no-repeat;
         background-size: cover;
         width: 100%;

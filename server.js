@@ -7,10 +7,14 @@ const app = express();
 const port = process.env.PORT || 4200;
 
 const bids = require("./routes/bids");
+const admin = require("./routes/admin");
+const user = require("./routes/user");
 
 app.use(express.json());
 
 app.use("/api/bids", bids);
+app.use("/api/admin", admin);
+app.use("/api/user", user);
 
 app.use(express.static(path.join(__dirname, "client/build")));
 

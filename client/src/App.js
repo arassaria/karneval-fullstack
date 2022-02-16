@@ -8,8 +8,32 @@ import Livestream from "./pages/Livestream";
 import Auction from "./pages/Auction";
 import Sponsors from "./pages/Sponsors";
 import Contact from "./pages/Contact";
+import Impressum from "./pages/Impressum";
+import Datenschutz from "./pages/Datenschutz";
+import Admin from "./pages/Admin";
+import Login from "./pages/Login";
+import Logout from "./pages/Logout";
+import Register from "./pages/Register";
+import { useEffect, useState } from "react";
+import { getUserRights } from "./utils/api";
 
 function App() {
+  const [token, setToken] = useState();
+  const [rank, setRank] = useState();
+
+  useEffect(() => {
+    const doFetch = async () => {
+      setToken(localStorage.getItem("token"));
+      if (localStorage.getItem("token")) {
+        const rank = await getUserRights({
+          token: localStorage.getItem("token"),
+        });
+        setRank(rank);
+      }
+    };
+    doFetch();
+  }, []);
+
   return (
     <>
       <Router>
@@ -21,18 +45,38 @@ function App() {
         </Header>
         <Nav>
           <Link to="/">Livestream</Link>
-          <Link to="/programm">Programm</Link>
           <Link to="/sponsors">Sponsoren</Link>
           <Link to="/contact">Kontakt</Link>
           <Link to="/auction">Auktion</Link>
+          {token && rank === "2" && <Link to="/admin">Admin</Link>}
+          {token && rank === "1" && <Link to="/dj">DJ</Link>}
+          {!token && <Link to="/login">Login</Link>}
+          {token && <Link to="/logout">Logout</Link>}
         </Nav>
         <Switch>
-          <Route path="/programm">Programm</Route>
+          <Route path="/admin">
+            <Admin />
+          </Route>
+          <Route path="/impressum">
+            <Impressum />
+          </Route>
+          <Route path="/datenschutz">
+            <Datenschutz />
+          </Route>
           <Route path="/sponsors">
             <Sponsors />
           </Route>
           <Route path="/contact">
             <Contact />
+          </Route>
+          <Route path="/login">
+            <Login />
+          </Route>
+          <Route path="/logout">
+            <Logout />
+          </Route>
+          <Route path="/staff/register">
+            <Register />
           </Route>
           <Route path="/auction">
             <Auction />
@@ -43,12 +87,8 @@ function App() {
         </Switch>
         <Footer>
           <div className="LinkContainer">
-            <a href="https://www.eventservice-mb.de/rechtliches/impressum/">
-              Impressum
-            </a>
-            <a href="https://www.eventservice-mb.de/rechtliches/datenschutz/">
-              Datenschutz
-            </a>
+            <Link to="/impressum">Impressum</Link>
+            <Link to="/datenschutz">Datenschutz</Link>
           </div>
         </Footer>
       </Router>
@@ -59,7 +99,7 @@ function App() {
 export default App;
 
 const Nav = styled.div`
-  background-color: grey;
+  background-color: #3f789b;
   list-style-type: none;
   display: flex;
   justify-content: space-evenly;
