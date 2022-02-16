@@ -2,7 +2,8 @@ import "./App.css";
 import GlobalStyle from "./GlobalStyles";
 import styled from "styled-components/macro";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
-import logo from "./assets/Logo_KVer_Web-1.png";
+import Schriftzug from "./assets/Karneval-Verbindet Schriftzug.svg";
+import Hut from "./assets/KarnevalHut.svg";
 import Livestream from "./pages/Livestream";
 import Auction from "./pages/Auction";
 import Sponsors from "./pages/Sponsors";
@@ -14,7 +15,9 @@ function App() {
       <Router>
         <GlobalStyle />
         <Header>
-          <Logo src={logo} alt="Logo" />
+          <Logo src={Hut} alt="Hut" />
+          <Logo src={Schriftzug} alt="Logo" />
+          <Logo src={Hut} alt="Hut" />
         </Header>
         <Nav>
           <Link to="/">Livestream</Link>
