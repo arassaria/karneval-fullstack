@@ -47,7 +47,7 @@ function App() {
           <Link to="/">Livestream</Link>
           <Link to="/sponsors">Sponsoren</Link>
           <Link to="/contact">Kontakt</Link>
-          <Link to="/auction">Auktion</Link>
+          {/* <Link to="/auction">Auktion</Link> */}
           {token && rank === "2" && <Link to="/admin">Admin</Link>}
           {token && rank === "1" && <Link to="/dj">DJ</Link>}
           {!token && <Link to="/login">Login</Link>}

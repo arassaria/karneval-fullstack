@@ -66,9 +66,14 @@ const AuctionHighest = styled.div`
   background-color: white;
   border: 1px solid black;
   box-shadow: 2px 2px grey;
+  padding: 10px;
+  height: fit-content;
+  border-radius: 10px;
+  display: none;
 `;
 
 const StreamContainer = styled.div`
+  margin-top: 3%;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
