@@ -92,7 +92,6 @@ const Datenschutz = () => {
           56410 Montabaur
         </p>
         Vertretungsberechtigte Personen: <p>Carsten Irrgang</p>
-        E-Mail-Adresse: <p>info@kolbe-audio.de</p>
         <h2 id="mOverview">Übersicht der Verarbeitungen</h2>
         <p>
           Die nachfolgende Übersicht fasst die Arten der verarbeiteten Daten und
